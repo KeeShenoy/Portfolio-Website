@@ -23,7 +23,6 @@ html {
 body {
     background: var(--bg-color);
     color: var(--text-color);
-
 }
 
 section {
@@ -31,7 +30,7 @@ section {
     padding: 10rem 9% 2rem;
 }
 
-/* Header Section code  */
+/* ── Header ── */
 
 .header {
     position: fixed;
@@ -46,7 +45,6 @@ section {
     background: var(--main-color);
     backdrop-filter: blur(10px);
     transition: all 0.5s ease;
-
 }
 
 .logo {
@@ -59,7 +57,6 @@ section {
 
 .logo:hover {
     transform: scale(1.05);
-
 }
 
 .navbar a {
@@ -82,7 +79,7 @@ section {
     display: none;
 }
 
-/* Home Section Code  */
+/* ── Home ── */
 
 .home {
     display: flex;
@@ -106,22 +103,13 @@ section {
 }
 
 @keyframes floatImage {
-    0% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-2.4rem);
-    }
-
-    100% {
-        transform: translateY(0);
-    }
+    0%   { transform: translateY(0); }
+    50%  { transform: translateY(-2.4rem); }
+    100% { transform: translateY(0); }
 }
 
 .home-content {
     margin-left: 5rem;
-
 }
 
 .home-content h3 {
@@ -134,7 +122,7 @@ section {
 }
 
 span {
-    color: var(--main-color)
+    color: var(--main-color);
 }
 
 .home-content h1 {
@@ -180,13 +168,20 @@ span {
     letter-spacing: 0.1rem;
     font-weight: 600;
     transition: 0.3s ease;
+    border: none;
+    cursor: pointer;
 }
 
 .btn:hover {
     box-shadow: 0 0 1.6rem var(--main-color);
 }
 
-/* About Section Code  */
+.btn:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+}
+
+/* ── About ── */
 
 .about {
     display: flex;
@@ -234,7 +229,7 @@ span {
     margin: 2rem 0 3rem;
 }
 
-/* Services Section Code  */
+/* ── Services ── */
 
 .services h2 {
     text-align: center;
@@ -252,11 +247,11 @@ span {
 .services-container .services-box {
     flex: 1 1 30rem;
     background: var(--snd-bg-color);
-    padding: 6rem 2rem 6rem;
+    padding: 6rem 2rem;
     border-radius: 2rem;
     text-align: center;
     border: 0.3rem solid var(--bg-color);
-    transition: 0.3 ease;
+    transition: 0.3s ease;
 }
 
 .services-container .services-box:hover {
@@ -278,79 +273,87 @@ span {
     margin: 1rem 0 3rem;
 }
 
+/* ── Skills Section ── */
 
-/* Testimonials Section  */
-
-.testimonial {
+.skills {
     background: var(--snd-bg-color);
+    min-height: auto;
+    padding: 8rem 9%;
 }
 
-.testimonial-box {
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
-.testimonial .heading {
+.skills .heading {
     margin-bottom: 5rem;
 }
 
-.testimonial-box img {
-    width: 15rem;
-    border-radius: 50%;
-    border: 3px solid var(--main-color);
-    box-shadow: 0 0 25px var(--main-color);
-}
-
-.wrapper {
+.skills-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 3rem;
+    gap: 4rem;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.testimonial-item {
-    min-height: 450px;
-    max-width: 450px;
+.skills-column {
     background: var(--bg-color);
-    border: 0.3rem solid var(--bg-color);
     border-radius: 2rem;
-    margin: 0 2rem;
-    padding: 20px 20px;
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 1.5rem;
-    color: var(--text-color);
-    transition: 0.3 ease;
+    padding: 3.5rem 3rem;
+    border: 0.3rem solid transparent;
+    transition: 0.3s ease;
 }
 
-.testimonial-item:hover {
+.skills-column:hover {
     border-color: var(--main-color);
-    transform: scale(1.02);
+    transform: translateY(-6px);
+    box-shadow: 0 10px 30px rgba(0, 127, 115, 0.15);
 }
 
-.testimonial-item h2 {
-    font-size: 3rem;
+.skills-category {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--main-color);
+    margin-bottom: 2.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
 }
 
-.testimonial-item p {
-    font-size: 1.5rem;
-    text-align: center;
+.skills-category i {
+    font-size: 2.6rem;
 }
 
-#star {
-    color: gold;
-    font-size: 2rem;
+.skill-item {
+    margin-bottom: 2rem;
 }
 
-/* Contact Section Code  */
+.skill-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.8rem;
+    font-size: 1.55rem;
+    font-weight: 600;
+}
+
+.skill-bar {
+    width: 100%;
+    height: 1rem;
+    background: #ddf4f2;
+    border-radius: 5rem;
+    overflow: hidden;
+}
+
+.skill-progress {
+    height: 100%;
+    width: 0%;                          /* starts at 0, animated by JS */
+    background: linear-gradient(90deg, var(--main-color), #00c4b4);
+    border-radius: 5rem;
+    transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ── Contact ── */
 
 .contact {
-    background: var(--bg-colour)
+    background: var(--bg-color);
 }
 
 .contact .heading {
@@ -391,7 +394,6 @@ span {
 .contact form .input-box input {
     width: 49%;
     margin: 0.7rem 0.35rem;
-
 }
 
 .contact form .btn {
@@ -399,7 +401,30 @@ span {
     border: 0.3rem solid var(--main-color);
 }
 
-/* Footer Section Code  */
+/* Form status messages */
+.form-status {
+    font-size: 1.6rem;
+    margin-top: 1.5rem;
+    padding: 1rem 1.5rem;
+    border-radius: 0.8rem;
+    display: none;
+}
+
+.form-status.success {
+    display: block;
+    background: #e6fff8;
+    color: #006b5f;
+    border: 1px solid var(--main-color);
+}
+
+.form-status.error {
+    display: block;
+    background: #fff0f0;
+    color: #b00020;
+    border: 1px solid #b00020;
+}
+
+/* ── Footer ── */
 
 .footer {
     position: relative;
@@ -443,45 +468,31 @@ span {
     color: var(--text-color);
 }
 
-
-/* Responsive Design Code  */
+/* ── Responsive ── */
 
 @media (max-width: 1200px) {
-    html {
-        font-size: 55%;
-    }
+    html { font-size: 55%; }
 }
 
 @media (max-width: 991px) {
-    .header {
-        padding: 2rem 3%;
-    }
+    .header { padding: 2rem 3%; }
+    section { padding: 10rem 3%; }
+    .services { padding: 7rem; }
 
-    section {
-        padding: 10rem 3%;
-    }
-
-    .services {
-        padding: 7rem;
-    }
-
-    .testimonial .wrapper {
-        grid-template-columns: repeat(1, 1fr);
+    .skills-container {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
     }
 
     .contact form .input-box input {
         width: 100%;
     }
 
-    .footer {
-        padding: 2rem 3%;
-    }
+    .footer { padding: 2rem 3%; }
 }
 
 @media (max-width: 991px) {
-    #menu-icon {
-        display: block;
-    }
+    #menu-icon { display: block; }
 
     .navbar {
         position: absolute;
@@ -502,21 +513,12 @@ span {
         font-size: 22px;
     }
 
-    .navbar.active {
-        right: 0;
-    }
+    .navbar.active { right: 0; }
 
-    .home {
-        flex-direction: column;
-    }
+    .home { flex-direction: column; }
 
-    .home-content h3 {
-        font-size: 2.6rem;
-    }
-
-    .home-content h1 {
-        font-size: 5rem;
-    }
+    .home-content h3 { font-size: 2.6rem; }
+    .home-content h1 { font-size: 5rem; }
 
     .home-content {
         order: 2;
@@ -528,22 +530,18 @@ span {
         margin-top: 4rem;
     }
 
-    .about {
-        flex-direction: column-reverse;
-    }
+    .about { flex-direction: column-reverse; }
 
     .about-img img {
         width: 70vw;
         margin-top: 4rem;
     }
 
-    .services h2 {
-        margin-bottom: 3rem;
-    }
+    .services h2 { margin-bottom: 3rem; }
 }
 
 @media (max-width: 617px) {
-    .home-img img{
+    .home-img img {
         width: 70vw;
         margin-top: 8rem;
     }
@@ -555,7 +553,5 @@ span {
 }
 
 @media (max-width: 450px) {
-    html {
-        font-size: 50%;
-    }
+    html { font-size: 50%; }
 }
